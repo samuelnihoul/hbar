@@ -2,7 +2,7 @@
   "name": "hbar",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,5 +11,6 @@
   "dependencies": {
     "@hashgraph/sdk": "^2.11.3",
     "dotenv": "^16.0.0"
-  }
+  },
+  "type":"module"
 }
