@@ -1,6 +1,5 @@
-console.clear();
-require("dotenv").config();
-const {
+import 'dotenv/config'
+import {
 	AccountId,
 	PrivateKey,
 	Client,
@@ -11,7 +10,7 @@ const {
 	TransferTransaction,
 	AccountBalanceQuery,
 	TokenAssociateTransaction,
-} = require("@hashgraph/sdk");
+} from '@hashgraph/sdk'
 
 // Configure accounts and client, and generate needed keys
 const operatorId = AccountId.fromString(process.env.OPERATOR_ID);
@@ -25,7 +24,7 @@ const client = Client.forTestnet().setOperator(operatorId, operatorKey);
 
 const supplyKey = PrivateKey.generate();
 
-async function main() {
+async function nft() {
 	//Create the NFT
 	let nftCreate = await new TokenCreateTransaction()
 		.setTokenName("diploma")
@@ -55,7 +54,7 @@ async function main() {
 	console.log(`- Created NFT with Token ID: ${tokenId} \n`);
 
 	//IPFS content identifiers for which we will create a NFT
-	CID = ["QmTzWcVfk88JRqjTpVwHzBeULRTNzHY7mnBSG42CpwHmPa"];
+	const CID = ["QmTzWcVfk88JRqjTpVwHzBeULRTNzHY7mnBSG42CpwHmPa"];
 
 	// Mint new NFT
 	let mintTx = await new TokenMintTransaction()
@@ -120,4 +119,5 @@ async function main() {
 	var balanceCheckTx = await new AccountBalanceQuery().setAccountId(aliceId).execute(client);
 	console.log(`- Alice's balance: ${balanceCheckTx.tokens._map.get(tokenId.toString())} NFTs of ID ${tokenId}`);
 }
-main();
+
+export default nft

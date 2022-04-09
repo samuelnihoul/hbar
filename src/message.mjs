@@ -1,4 +1,10 @@
+import { TopicCreateTransaction ,Client}from '@hashgraph/sdk'
+import 'dotenv/config'
 async function message() {
+    const client = Client.forTestnet()
+    const myAccountId = process.env.MY_ACCOUNT_ID;
+    const myPrivateKey = process.env.MY_PRIVATE_KEY;
+    client.setOperator(myAccountId, myPrivateKey);
 
     //Create a new topic
     let txResponse = await new TopicCreateTransaction().execute(client);
