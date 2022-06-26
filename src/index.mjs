@@ -1,7 +1,8 @@
 import 'dotenv/config'
 import message from './message.mjs'
-import { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction } from "@hashgraph/sdk";
-import nft from './nft.js';
+import { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction, TokenSupplyType } from "@hashgraph/sdk";
+import nft from './nft.mjs';
+import token from './token.mjs'
 async function main() {
     //Grab your Hedera testnet account ID and private key from your .env file
     const myAccountId = process.env.MY_ACCOUNT_ID;
@@ -71,9 +72,10 @@ console.log("The account balance after the transfer is: " +getNewBalance.hbars.t
 
 
 }
-main();
-message()
-nft()
+//main();
+//message()
+//nft()
+token()
 
 
 

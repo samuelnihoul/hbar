@@ -17,8 +17,8 @@ const operatorId = AccountId.fromString(process.env.OPERATOR_ID);
 const operatorKey = PrivateKey.fromString(process.env.OPERATOR_PVKEY);
 const treasuryId = AccountId.fromString(process.env.TREASURY_ID);
 const treasuryKey = PrivateKey.fromString(process.env.TREASURY_PVKEY);
-const aliceId = AccountId.fromString(process.env.ALICE_ID);
-const aliceKey = PrivateKey.fromString(process.env.ALICE_PVKEY);
+const aliceId = AccountId.fromString(process.env.SAMpb);
+const aliceKey = PrivateKey.fromString(process.env.SAM);
 
 const client = Client.forTestnet().setOperator(operatorId, operatorKey);
 
@@ -54,7 +54,7 @@ async function nft() {
 	console.log(`- Created NFT with Token ID: ${tokenId} \n`);
 
 	//IPFS content identifiers for which we will create a NFT
-	const CID = ["QmTzWcVfk88JRqjTpVwHzBeULRTNzHY7mnBSG42CpwHmPa"];
+	const CID = ["QmPdEScDCLgqeLRgZXNfbcXNGCPnhumRHmgb2Q4j11UJsX"];
 
 	// Mint new NFT
 	let mintTx = await new TokenMintTransaction()
@@ -73,7 +73,7 @@ async function nft() {
 
 	//Log the serial number
 	console.log(`- Created NFT ${tokenId} with serial: ${mintRx.serials[0].low} \n`);
-	
+
 	//Create the associate transaction and sign with Alice's key 
 	let associateAliceTx = await new TokenAssociateTransaction()
 		.setAccountId(aliceId)
