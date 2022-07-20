@@ -1,3 +1,5 @@
+// mint a Token with initial supply 100
+
 import 'dotenv/config'
 import {
 	AccountId,
@@ -8,18 +10,18 @@ import {
 	TokenSupplyType,
 	
 } from '@hashgraph/sdk'
-const treasuryId=AccountId.fromString(process.env.NL2)
-const treasuryKey=PrivateKey.fromString(process.env.NL2P)
-const supplyKey=PrivateKey.fromString(process.env.NL2P)
-const client=Client.forMainnet().setOperator(treasuryId,treasuryKey)
+const treasuryId=AccountId.fromString(process.env.TESTNET)
+const treasuryKey=PrivateKey.fromString(process.env.TESTNETP)
+const supplyKey=PrivateKey.generate()
+const client=Client.forTestnet().setOperator(treasuryId,treasuryKey)
 export default async function token(){
 // CREATE FUNGIBLE TOKEN (STABLECOIN)
 let tokenCreateTx = await new TokenCreateTransaction()
 	.setTokenName("Karbon Moneta")
 	.setTokenSymbol("KM")
 	.setTokenType(TokenType.FungibleCommon)
-	.setDecimals(2)
-	.setInitialSupply(10000000)
+	.setDecimals(10)
+	.setInitialSupply(1)
 	.setTreasuryAccountId(treasuryId)
 	.setSupplyType(TokenSupplyType.Infinite)
 	.setSupplyKey(supplyKey)
