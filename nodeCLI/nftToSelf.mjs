@@ -41,7 +41,7 @@ console.log(`- Created NFT with Token ID: ${tokenId} \n`);
 /////////////////////////////////////////////////////////////////////
 // Mint new NFT
 //IPFS content identifiers for which we will create a NFT
-const CID = "QmPQavZKrNWS1Sc6aEPUHsrLcWqpV2bF83Y3bgZVap8Ent";
+const CID = "ipfs://QmPdEScDCLgqeLRgZXNfbcXNGCPnhumRHmgb2Q4j11UJsX/April22.png";
 
 // Mint new NFT
 let mintTx = await new TokenMintTransaction()

@@ -27,7 +27,7 @@ const supplyKey = PrivateKey.generate();
 async function nft() {
 	//Create the NFT
 	let nftCreate = await new TokenCreateTransaction()
-
+.setTokenName('Hello World')
 	.setTokenSymbol('KB')	
 		.setTokenType(TokenType.NonFungibleUnique)
 		.setDecimals(0)
@@ -54,7 +54,7 @@ async function nft() {
 	console.log(`- Created NFT with Token ID: ${tokenId} \n`);
 
 	//IPFS content identifiers for which we will create a NFT
-	const CID = "bafyreie3ichmqul4xa7e6xcy34tylbuq2vf3gnjf7c55trg3b6xyjr4bku"
+	const CID = "ipfs://bafyreie3ichmqul4xa7e6xcy34tylbuq2vf3gnjf7c55trg3b6xyjr4bku/metadata.json"
 	
 
 	// Mint new NFT
