@@ -12,8 +12,8 @@ const client=Client.forMainnet().setOperator(operatorId, operatorKey);
 //Create the NFT
 async function mint(){
 let nftCreate = await new TokenCreateTransaction()
-	.setTokenName("April 2022")
-	.setTokenSymbol("KB.4.2022")
+	.setTokenName("July 2022")
+	.setTokenSymbol("KB.2022.7")
   
 	.setTokenType(TokenType.NonFungibleUnique)
 	.setDecimals(0)
@@ -41,7 +41,7 @@ console.log(`- Created NFT with Token ID: ${tokenId} \n`);
 /////////////////////////////////////////////////////////////////////
 // Mint new NFT
 //IPFS content identifiers for which we will create a NFT
-const CID = "ipfs://QmPdEScDCLgqeLRgZXNfbcXNGCPnhumRHmgb2Q4j11UJsX/April22.png";
+const CID = "QmTZzjC7sF6w3zy29GJzCqNamXbEaP6qrKx1SJcFuuVkF4";
 
 // Mint new NFT
 let mintTx = await new TokenMintTransaction()
