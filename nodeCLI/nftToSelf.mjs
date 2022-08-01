@@ -62,3 +62,5 @@ let mintRx = await mintTxSubmit.getReceipt(client);
 console.log(`- Created NFT ${tokenId} with serial: ${mintRx.serials[0].low} \n`);
 }
 mint()
+
+export default mint
