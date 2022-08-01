@@ -1,10 +1,10 @@
 {
-    "name":"July 2022 - 0.1 tonne",
+    "name":"July 2022 - 35.3 tonnes",
     "description":"Karbon Basar by harmonia-eko",
     "image":"https://ipfs.io/ipfs/QmWeciqFc3BYRGVYXmKeBNqrd77FK67t4m5B2vRFpKmZhw?filename=July22.png",
     "properties":{
         "edition":"base",
-        "quantity":"0.1 tonne",
+        "quantity":"35.3 tonnes",
        "project":"Climate Plus Portfolio"
     }
 }
