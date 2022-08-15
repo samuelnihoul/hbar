@@ -1,6 +1,5 @@
 import * as functions from "firebase-functions";
 import 'dotenv/config'
-
 import { Client,  TokenId,TokenAssociateTransaction } from "@hashgraph/sdk";
 
 
@@ -44,8 +43,7 @@ export const ICOTx =  functions.https.onRequest(async (request, response) =>{
 
 // payer function
 
-// export const purchase = functions.https.onRequest((request, response) => {
-//     const body = JSON.parse(request.body)
-
-   
-// }
+export const purchase = functions.https.onRequest((request, response) => {
+   const body = JSON.parse(request.body)
+}
+)
