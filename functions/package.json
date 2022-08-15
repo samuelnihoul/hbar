@@ -1,5 +1,6 @@
 {
   "name": "functions",
+  "compilerOptions": { "esModuleInterop": false } ,
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",

@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import message from './message.mjs'
+import message from './src/message.mjs'
 import { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction, TokenSupplyType } from "@hashgraph/sdk";
 import nft from './nft.mjs';
 import token from './token.mjs'

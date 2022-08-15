@@ -2,11 +2,13 @@
 import { AccountId, PrivateKey, Client, TokenMintTransaction, TokenCreateTransaction,TokenType, TokenSupplyType } from '@hashgraph/sdk'
 import 'dotenv/config'
 
-const treasuryId=AccountId.fromString(process.env.NL2||"")
-const treasuryKey=PrivateKey.fromString(process.env.NL2P)
-const supplyKey=PrivateKey.fromString(process.env.NL2P)
-const operatorId=AccountId.fromString(process.env.NL2||"")
-const operatorKey=PrivateKey.fromString(process.env.NL2P)
+const treasuryId=AccountId.fromString("0.0.961660")
+const treasuryKey=PrivateKey.fromString(
+	"302e020100300506032b657004220420c9220414fb9444ada9f21801faa3667d8e44eb41c769fe54439b26a7b3259d73"
+)
+const supplyKey=PrivateKey.fromString("302e020100300506032b657004220420c9220414fb9444ada9f21801faa3667d8e44eb41c769fe54439b26a7b3259d73")
+const operatorId=AccountId.fromString("0.0.961660")
+const operatorKey=PrivateKey.fromString("302e020100300506032b657004220420c9220414fb9444ada9f21801faa3667d8e44eb41c769fe54439b26a7b3259d73")
 const client=Client.forMainnet().setOperator(operatorId, operatorKey);
 	
 //Create the NFT

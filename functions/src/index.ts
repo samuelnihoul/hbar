@@ -1,12 +1,12 @@
 import * as functions from "firebase-functions";
 import 'dotenv/config'
 
-import { Client, PrivateKey, TokenId, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction, TokenSupplyType, TokenAssociateTransaction } from "@hashgraph/sdk";
+import { Client,  TokenId,TokenAssociateTransaction } from "@hashgraph/sdk";
 
 
 //Grab your Hedera testnet account ID and private key from your .env file
-const myAccountId = process.env.MY_ACCOUNT_ID;
-const myPrivateKey = process.env.MY_PRIVATE_KEY;
+const myAccountId = process.env.TESTNET;
+const myPrivateKey = process.env.TESTNETP;
 // If we weren't able to grab it, we should throw a new error
 if (myAccountId == null ||
     myPrivateKey == null) {
@@ -23,7 +23,7 @@ client.setOperator(myAccountId, myPrivateKey);
 
 // create the hedera ICO transaction
 
-export const ICOTx = functions.https.onRequest((request, response) => {
+export const ICOTx =  functions.https.onRequest(async (request, response) =>{
     const body = JSON.parse(request.body)
 
     // TOKEN ASSOCIATION WITH ALICE's ACCOUNT
