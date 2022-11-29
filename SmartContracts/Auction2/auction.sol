@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.9;
-import {IHederaTokenService} from "./hedera-smart-contracts/hts-precompile/IHederaTokenService.sol";
+import {IHederaTokenService} from "https://github.com/hashgraph/hedera-smart-contracts/contracts/hts-precompile/IHederaTokenService.sol";
 
 interface KarbonMoneta {
     function safeTransferFrom(
