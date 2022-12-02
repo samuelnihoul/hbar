@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.9;
+pragma solidity 0.8.17;
+import "hardhat/console.sol";
+import "https://github.com/hashgraph/hedera-smart-contracts";
 
 interface Token {
     function safeTransferFrom(
@@ -11,46 +13,52 @@ interface Token {
     function transferFrom(address, address, uint256) external;
 }
 
-contract EnglishAuction {
-    event Start();
+contract WeeklyAuction {
+    event Start(uint64 auctionNumber);
     event Bid(address indexed sender, uint256 amount);
-    event End(address[] winners, uint256[] amount);
-
+    event End(mapping(address => uint256) bids);
     Token public tokenToBeAttributed;
-
-    address payable public seller;
+    address public seller;
     uint256 public endAt;
     bool public started;
     bool public ended;
-
-    address[] public highestBidders;
-    uint256[] public highestBids;
+    string tokenID;
+    address[] biderList;
+    address harmonia_eko;
     mapping(address => uint256) public bids;
+    uint256 public totalBiddedAmount;
+    uint256 public auctionNumber;
 
-    constructor(address _tokenToBeAttributed) {
+    constructor(
+        address _tokenToBeAttributed,
+        string memory _tokenID,
+        address _harmonia_eko
+    ) {
         tokenToBeAttributed = Token(_tokenToBeAttributed);
-
-        seller = payable(msg.sender);
+        tokenID = _tokenID;
+        seller = msg.sender;
         highestBids = [0];
+        harmonia -
+            eko = _harmonia - eko;
     }
 
     function start() external {
         require(!started, "started");
         require(msg.sender == seller, "not seller");
-
         tokenToBeAttributed.transferFrom(msg.sender, address(this), 1);
-
+        auctionNumber += 1;
         started = true;
-        endAt = block.timestamp + 7 days;
+        endAt = block.timestamp + 30 seconds;
 
-        emit Start();
+        emit Start(auctionNumber);
     }
 
     function bid() external payable {
         require(started, "not started");
         require(block.timestamp < endAt, "ended");
         bids[msg.sender] += msg.value;
-
+        totalBiddedAmount += msg.value;
+        biderList[biderList.length + 1] = msg.sender;
         emit Bid(msg.sender, msg.value);
     }
 
@@ -58,23 +66,18 @@ contract EnglishAuction {
         require(started, "not started");
         require(block.timestamp >= endAt, "not ended");
         require(!ended, "ended");
-
         ended = true;
-        //calculate the total bidded amount
-        uint256 totalBiddedAmount = 0;
-        for (uint64 i = 0; i < highestBidders.length; i++) {
-            totalBiddedAmount += bids[highestBidders[i]];
-        }
         if (highestBidders.length != 0) {
-            for (uint64 i = 0; i < highestBidders.length; i++) {
+            for (uint64 i = 0; i < biderList.length; i++) {
                 tokenToBeAttributed.safeTransferFrom(
                     address(this),
-                    highestBidders[i],
-                    1 / totalBiddedAmount
+                    biderList[i],
+                    (0.99 * bids[biderList[i]]) / totalBiddedAmount
                 );
             }
+            tokenToBeAttributed.safeTransferFrom(address.this, harmonia - eko);
         }
-
-        emit End(highestBidders, highestBids);
+        emit End(bids);
+        start();
     }
 }

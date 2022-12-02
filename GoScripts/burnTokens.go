@@ -30,12 +30,12 @@ func main() {
 	fmt.Printf("The account ID is = %v\n", myAccountId)
 	fmt.Printf("The private key is = %v\n", myPrivateKey)
 	//Create your testnet client
-	client := hedera.ClientForTestnet()
+	client := hedera.ClientForMainnet()
 	client.SetOperator(myAccountId, myPrivateKey)
 	//Burn 1,000 tokens and freeze the unsigned transaction for manual signing
 	transaction, err := hedera.NewTokenBurnTransaction().
-		SetTokenID(tokenId).
-		SetAmount(1000).
+		SetTokenID(hedera.TokenID{Shard: 0, Realm: 0, Token: 1113578}).
+		SetAmount(99899001).
 		FreezeWith(client)
 
 	if err != nil {
@@ -43,14 +43,14 @@ func main() {
 	}
 
 	//Sign with the supply private key of the token, submit the transaction to a Hedera network
-	txResponse, err := transaction.Sign(supplyKey).Execute(client)
+	txResponse, err := transaction.Sign(myPrivateKey).Execute(client)
 
 	if err != nil {
 		panic(err)
 	}
 
 	//Request the receipt of the transaction
-	receipt, err = txResponse.GetReceipt(client)
+	receipt, err := txResponse.GetReceipt(client)
 
 	if err != nil {
 		panic(err)
