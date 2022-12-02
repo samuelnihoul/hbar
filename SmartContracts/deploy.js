@@ -12,7 +12,7 @@ const bytecode = helloHedera.data.bytecode.object;
 //Create a file on Hedera and store the hex-encoded bytecode
 const contractCreate = new ContractCreateFlow().setGas(100000)
     //Set the bytecode of the contract
-    .setBytecode(bytecode);
+    .setBytecode(bytecode).setConstructorParameters({});
 async function e() {
     //Submit the file to the Hedera test network signing with the transaction fee payer key specified with the client
     const submitTx = await contractCreate.execute(client);

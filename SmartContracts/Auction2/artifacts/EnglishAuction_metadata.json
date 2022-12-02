@@ -9,13 +9,13 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_tokenAddress",
+						"name": "_tokenToBeAttributed",
 						"type": "address"
 					},
 					{
-						"internalType": "uint64",
-						"name": "_auctionNumber",
-						"type": "uint64"
+						"internalType": "uint256",
+						"name": "_endAt",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -64,19 +64,6 @@
 				"inputs": [],
 				"name": "Start",
 				"type": "event"
-			},
-			{
-				"inputs": [],
-				"name": "auctionID",
-				"outputs": [
-					{
-						"internalType": "uint64",
-						"name": "",
-						"type": "uint64"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -213,7 +200,7 @@
 				"name": "tokenToBeAttributed",
 				"outputs": [
 					{
-						"internalType": "contract KarbonMoneta",
+						"internalType": "contract Token",
 						"name": "",
 						"type": "address"
 					}
@@ -250,19 +237,11 @@
 	},
 	"sources": {
 		"SmartContracts/Auction2/auction.sol": {
-			"keccak256": "0xb464baab37ec042d6b4be5df617e4054b3ab16a0872f045dd4328b5f1a0f9730",
+			"keccak256": "0x55c230827b0cb174afc1237ef112e517cf0503f8170bb6738868c964fbe7c5ec",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ea5dbd5973f96ef11fa5c80b6d1782ec8a6937c3d3904b3947ab874a11550bee",
-				"dweb:/ipfs/Qmei4VEFN5iu9thvycLKF6M5itPV4E5rc715yKVwUjHmmH"
-			]
-		},
-		"https://github.com/hashgraph/hedera-smart-contracts/contracts/hts-precompile/IHederaTokenService.sol": {
-			"keccak256": "0xfdb882a4883cca98de0904d3a74405c210c891d7dab3666f635b3917988781e2",
-			"license": "Apache-2.0",
-			"urls": [
-				"bzz-raw://bcdb3f8e6c966d249922e69246fe93dcbc9a89f858f747f3814a696aa3ca2e55",
-				"dweb:/ipfs/QmYMYDS8cawToJBzjepLN7MLmoL49rxrhJTmiWMRKEQTYZ"
+				"bzz-raw://f408b5458cba40d2301e0e80485bf0db1ae5c72df899bd224556ecc019bcb62c",
+				"dweb:/ipfs/QmRnT5YheTHcP7rUcnYYphp85A1yLEhUCwAWJVFqwroyu4"
 			]
 		}
 	},

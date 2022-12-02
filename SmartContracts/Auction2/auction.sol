@@ -1,19 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.9;
-import {IHederaTokenService} from "https://github.com/hashgraph/hedera-smart-contracts/contracts/hts-precompile/IHederaTokenService.sol";
 
-interface KarbonMoneta {
+interface Token {
     function safeTransferFrom(
         address from,
         address to,
         uint256 tokenId
     ) external;
 
-    function transferFrom(
-        address,
-        address,
-        uint256
-    ) external;
+    function transferFrom(address, address, uint256) external;
 }
 
 contract EnglishAuction {
@@ -21,8 +16,8 @@ contract EnglishAuction {
     event Bid(address indexed sender, uint256 amount);
     event End(address[] winners, uint256[] amount);
 
-    KarbonMoneta public tokenToBeAttributed;
-    uint64 public auctionID;
+    Token public tokenToBeAttributed;
+
     address payable public seller;
     uint256 public endAt;
     bool public started;
@@ -32,9 +27,8 @@ contract EnglishAuction {
     uint256[] public highestBids;
     mapping(address => uint256) public bids;
 
-    constructor(address _tokenAddress, uint64 _auctionNumber) {
-        tokenToBeAttributed = KarbonMoneta(_tokenAddress);
-        auctionID = _auctionNumber;
+    constructor(address _tokenToBeAttributed) {
+        tokenToBeAttributed = Token(_tokenToBeAttributed);
 
         seller = payable(msg.sender);
         highestBids = [0];
