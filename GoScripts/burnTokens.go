@@ -8,7 +8,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func main() {
+func BurnTokens() {
 	//Loads the .env file and throws an error if it cannot load the variables from that file correctly
 	err := godotenv.Load("../.env")
 	if err != nil {
