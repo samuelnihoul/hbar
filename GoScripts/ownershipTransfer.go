@@ -8,7 +8,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func BurnTokens() {
+func TransferOw() {
 	//Loads the .env file and throws an error if it cannot load the variables from that file correctly
 	err := godotenv.Load("../.env")
 	if err != nil {
@@ -32,10 +32,10 @@ func BurnTokens() {
 	//Create your testnet client
 	client := hedera.ClientForMainnet()
 	client.SetOperator(myAccountId, myPrivateKey)
-	//Burn 1,000 tokens and freeze the unsigned transaction for manual signing
-	transaction, err := hedera.NewTokenBurnTransaction().
+	//Change the supply key of the token
+	transaction, err := hedera.NewTokenUpdateTransaction().
 		SetTokenID(hedera.TokenID{Shard: 0, Realm: 0, Token: 1113578}).
-		SetAmount(99899001).
+		SetTreasuryAccountID(hedera.AccountID{Realm: 0, Shard: 0, Account: 1113578}).
 		FreezeWith(client)
 
 	if err != nil {
@@ -59,7 +59,6 @@ func BurnTokens() {
 	//Get the transaction consensus status
 	status := receipt.Status
 
-	fmt.Printf("The transaction consensus status is %v\n", status)
+	fmt.Printf("The transaction consensus status is %v, transaction ID is %v\n", status, txResponse.TransactionID)
 
-	//v2.1.0
 }
