@@ -47,7 +47,7 @@ contract TokenCreateContract is ExpiryHelper {
         secondAdminKeyValue.ed25519=ed25519AdminKey;
         keys[2] = IHederaTokenService.TokenKey(
             HederaTokenService.ADMIN_KEY_TYPE,
-            secondAdminKeyValue,
+            secondAdminKeyValue
         );
         IHederaTokenService.HederaToken memory myToken;
         myToken.name = "MyToken";
