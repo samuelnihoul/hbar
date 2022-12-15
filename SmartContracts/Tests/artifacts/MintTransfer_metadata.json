@@ -7,25 +7,6 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "hederaTokenService",
-				"outputs": [
-					{
-						"internalType": "contract HederaTokenService",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_payer",
-						"type": "address"
-					}
-				],
 				"name": "inti",
 				"outputs": [],
 				"stateMutability": "payable",
@@ -155,10 +136,10 @@
 			]
 		},
 		"hbar/SmartContracts/Tests/MintAndTransfer.sol": {
-			"keccak256": "0xcec57a8958309156294fa47876c716649ee6d12419e79937d075861febf8f880",
+			"keccak256": "0x9a6b04ba2cfd534dfadc3e2214071fd29e8d900282da43b76e728c3754972c64",
 			"urls": [
-				"bzz-raw://c1e9af1bce03d5fc88fb67d3c4467e83a1572540d38a53d78f6d629bea9dbd64",
-				"dweb:/ipfs/QmeXFBpUrgxYNbjUGuWmSBwbUDAZ6mv6gz1Yrbba59jie3"
+				"bzz-raw://4bb6ab9537142a02af0a7bcc05040608e55ef8055be2b192e90f2ebe228c5c0b",
+				"dweb:/ipfs/QmUskwMyC6ycoajMv1PDhF5vKW4PHd3B1wa8ZmTqMzFsqR"
 			]
 		}
 	},
