@@ -1,0 +1,186 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "memo",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "maxSupply",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "autoRenewPeriod",
+						"type": "uint32"
+					}
+				],
+				"name": "createNft",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "metadata",
+						"type": "bytes[]"
+					}
+				],
+				"name": "mintNft",
+				"outputs": [
+					{
+						"internalType": "int64",
+						"name": "",
+						"type": "int64"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "int64",
+						"name": "serial",
+						"type": "int64"
+					}
+				],
+				"name": "transferNft",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"hbar/SmartContracts/Tests/MintAndTransfer2.sol": "NFTCreator"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"hbar/SmartContracts/Auction2/hts-precompile/ExpiryHelper.sol": {
+			"keccak256": "0x3150d37980e98a44321db698f48b60a1524148430a8a0d0834384fe930d73c3a",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://7bc64280edb76f4ee24f57cc27f78a79ac1e399730b11559847d304dfb72ec66",
+				"dweb:/ipfs/Qmf7JsXjkd8iBPBcJSJGvD2VnHpTphEJLaUspB6mM7F5MY"
+			]
+		},
+		"hbar/SmartContracts/Auction2/hts-precompile/FeeHelper.sol": {
+			"keccak256": "0xa32e4e1b0247b3d57315c606d18b2b513df6678ae1c1c0b730f646b23a0fb2bb",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://5c4ff72e6f513df35a937b005e467a3ae883a6cfab754cdbebf7ff619be30459",
+				"dweb:/ipfs/QmYiPpnn1ij9TmddBRkEVL2Tf8mKfiqaHn8zJeScAFLMws"
+			]
+		},
+		"hbar/SmartContracts/Auction2/hts-precompile/HederaResponseCodes.sol": {
+			"keccak256": "0x9af70d38d34a234475b792a23c59f8cae63bf9d3407d0fb0a3112a40ce25627b",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://90d2abceb9a6f0244395d92abcad6669f5a4696fb876079271fbc4c32b7752f7",
+				"dweb:/ipfs/QmaKsVGmmcEwj6rcBmvbdKL213Seq8HwZTXf1DYnoaSELZ"
+			]
+		},
+		"hbar/SmartContracts/Auction2/hts-precompile/HederaTokenService.sol": {
+			"keccak256": "0x01265799f3f9010d1a5597f4a15a684ff8793bb426493951741b92d5bcb40cac",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://3734ef870596280f3177545c02c74f4d25fec55388a0785fa73dbdb1af064b52",
+				"dweb:/ipfs/QmW2WzmvTqumStJVs9absA8SC6mHpFN1FbC4rw5BxtVpRj"
+			]
+		},
+		"hbar/SmartContracts/Auction2/hts-precompile/IHederaTokenService.sol": {
+			"keccak256": "0x1df4449743626e64ff38122822b5fa56466e14bf3944f7b679eae145c05f0112",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://0d63c9a9ef88b6082fd0ce110d23a057e8f9f3360a5d4b7195b7d859788f0833",
+				"dweb:/ipfs/QmNUKRfuFiCxMW9qyqh8ytWMEHMQxH3Lr3v5vAjTrt2Mj2"
+			]
+		},
+		"hbar/SmartContracts/Auction2/hts-precompile/KeyHelper.sol": {
+			"keccak256": "0x01793be497677f53c5aeb4cd5bb23ef1f14a5ecf5a9bc42a4ef1ccd804f48447",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://c0e8dfb410285ff3f8fc1c381261a97cdda25fcca9b3dbb99524c63694affbe9",
+				"dweb:/ipfs/QmTDozFUjkMDwycr45uvG6jY2HEhUCDnC1dEANeb1VZRwB"
+			]
+		},
+		"hbar/SmartContracts/Tests/MintAndTransfer2.sol": {
+			"keccak256": "0x08f96d9e08c9c2c2400f2997b3a7d84e2d1e08db6e6eae12d79716cafcc54cab",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://cd43057920e8533cd19fbe4c6b124298cb5e55058109a4ed49cc6a0bcc933a93",
+				"dweb:/ipfs/Qmc5oKZKivzaNP3Ym9NehfrMiEBH1nYqANPNJHbuBMhWmM"
+			]
+		}
+	},
+	"version": 1
+}
