@@ -6,13 +6,14 @@ import "../Auction2/hts-precompile/IHederaTokenService.sol";
 import "../Auction2/hts-precompile/HederaTokenService.sol";
 import "../Auction2/hts-precompile/KeyHelper.sol";
 import "../Auction2/hts-precompile/ExpiryHelper.sol";
+import "../Auction2/hts-precompile/TokenCreateContract.sol";
 
 contract NFTCreator is ExpiryHelper {
     function createNft(
         string memory name,
         string memory symbol,
         string memory memo,
-        int64 maxSupply,
+        uint32 maxSupply,
         uint32 autoRenewPeriod
     ) external payable returns (address) {
         IHederaTokenService.TokenKey[]
@@ -35,7 +36,7 @@ contract NFTCreator is ExpiryHelper {
         token.freezeDefault = false;
         token.expiry = createAutoRenewExpiry(address(this), autoRenewPeriod); // Contract automatically renew by himself
 
-        (int responseCode, address createdToken) = HederaTokenService
+        (int responseCode, address createdToken) = TokenCreateContract
             .createNonFungibleToken(token);
 
         if (responseCode != HederaResponseCodes.SUCCESS) {
