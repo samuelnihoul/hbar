@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity 0.8.8;
+pragma solidity 0.8.17;
 
 import "../Auction2/hts-precompile/HederaResponseCodes.sol";
 import "../Auction2/hts-precompile/IHederaTokenService.sol";
@@ -7,7 +7,7 @@ import "../Auction2/hts-precompile/HederaTokenService.sol";
 import "../Auction2/hts-precompile/KeyHelper.sol";
 import "../Auction2/hts-precompile/ExpiryHelper.sol";
 
-contract NFTCreator is ExpiryHelper {
+contract NFTCreator is ExpiryHelper, HederaTokenService {
     function createNft(
         string memory name,
         string memory symbol,
@@ -35,7 +35,7 @@ contract NFTCreator is ExpiryHelper {
         token.freezeDefault = false;
         token.expiry = createAutoRenewExpiry(address(this), autoRenewPeriod); // Contract automatically renew by himself
 
-        (int responseCode, address createdToken) = TokenCreateContract
+        (int responseCode, address createdToken) = HederaTokenService
             .createNonFungibleToken(token);
 
         if (responseCode != HederaResponseCodes.SUCCESS) {
