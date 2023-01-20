@@ -1,12 +1,11 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity 0.8.17;
+pragma solidity 0.8.8;
 
 import "../Auction2/hts-precompile/HederaResponseCodes.sol";
 import "../Auction2/hts-precompile/IHederaTokenService.sol";
 import "../Auction2/hts-precompile/HederaTokenService.sol";
 import "../Auction2/hts-precompile/KeyHelper.sol";
 import "../Auction2/hts-precompile/ExpiryHelper.sol";
-import "../Auction2/hts-precompile/TokenCreateContract.sol";
 
 contract NFTCreator is ExpiryHelper {
     function createNft(
