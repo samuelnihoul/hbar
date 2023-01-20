@@ -4,7 +4,7 @@ pragma solidity 0.8.17;
 import "../Auction2/hts-precompile/HederaResponseCodes.sol";
 import "../Auction2/hts-precompile/IHederaTokenService.sol";
 import "../Auction2/hts-precompile/HederaTokenService.sol";
-import '../Auction2/hts-precompile/KeyHelper.sol';
+import "../Auction2/hts-precompile/KeyHelper.sol";
 import "../Auction2/hts-precompile/ExpiryHelper.sol";
 
 contract NFTCreator is ExpiryHelper {
@@ -18,9 +18,9 @@ contract NFTCreator is ExpiryHelper {
         IHederaTokenService.TokenKey[]
             memory keys = new IHederaTokenService.TokenKey[](1);
         // Set this contract as supply
-        keys[0] = HederaTokenService.getSingleKey(
-            3,
-            KeyHelper.CONTRACT_ID,
+        keys[0] = getSingleKey(
+            KeyType.SUPPLY,
+            KeyValueType.CONTRACT_ID,
             address(this)
         );
 
