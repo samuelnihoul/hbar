@@ -19,8 +19,8 @@ contract NFTCreator is ExpiryHelper {
             memory keys = new IHederaTokenService.TokenKey[](1);
         // Set this contract as supply
         keys[0] = HederaTokenService.getSingleKey(
-            KeyType.SUPPLY,
-            HederaTokenService.KeyValueType.CONTRACT_ID,
+            3,
+            KeyHelper.CONTRACT_ID,
             address(this)
         );
 
