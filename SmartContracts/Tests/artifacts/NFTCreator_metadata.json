@@ -8,6 +8,17 @@
 			{
 				"inputs": [
 					{
+						"internalType": "int256",
+						"name": "errorCode",
+						"type": "int256"
+					}
+				],
+				"name": "FailedToCreateNFT",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "name",
 						"type": "string"
@@ -166,19 +177,19 @@
 			]
 		},
 		"hbar/SmartContracts/Auction2/hts-precompile/KeyHelper.sol": {
-			"keccak256": "0x01793be497677f53c5aeb4cd5bb23ef1f14a5ecf5a9bc42a4ef1ccd804f48447",
+			"keccak256": "0x1c445127746a07dc4bdb8ea93cd151fbec3b686c9d7ee5845c875475eb89d8c3",
 			"license": "Apache-2.0",
 			"urls": [
-				"bzz-raw://c0e8dfb410285ff3f8fc1c381261a97cdda25fcca9b3dbb99524c63694affbe9",
-				"dweb:/ipfs/QmTDozFUjkMDwycr45uvG6jY2HEhUCDnC1dEANeb1VZRwB"
+				"bzz-raw://e0253869a15bd8d06a2a45b8cefdcefc64e4aee675c5ac5d5465ca2bb67d64df",
+				"dweb:/ipfs/QmabBXMqR3avxQ6nHeqFXmVhGpfNH5bZXP9zaBRDZ7WYtN"
 			]
 		},
 		"hbar/SmartContracts/Tests/MintAndTransfer2.sol": {
-			"keccak256": "0x08f96d9e08c9c2c2400f2997b3a7d84e2d1e08db6e6eae12d79716cafcc54cab",
+			"keccak256": "0xb9ca8eb975f315141944067974fb8cc3dba212f9ed165a269f7e495d4458c273",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://cd43057920e8533cd19fbe4c6b124298cb5e55058109a4ed49cc6a0bcc933a93",
-				"dweb:/ipfs/Qmc5oKZKivzaNP3Ym9NehfrMiEBH1nYqANPNJHbuBMhWmM"
+				"bzz-raw://5303c10a49953eef061f88dfe461a442f1ec45f4c3747f510ea5fd0301aa88e8",
+				"dweb:/ipfs/QmeTxJ6wArGJhJgyqfSWnHa7gQNjrYenRpK3x9dKsdF92F"
 			]
 		}
 	},
