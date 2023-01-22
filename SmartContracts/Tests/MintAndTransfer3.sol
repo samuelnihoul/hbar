@@ -6,9 +6,8 @@ import "../Auction2/hts-precompile/IHederaTokenService.sol";
 import "../Auction2/hts-precompile/HederaTokenService.sol";
 import "../Auction2/hts-precompile/KeyHelper.sol";
 import "../Auction2/hts-precompile/ExpiryHelper.sol";
-// error FailedToCreateNFT (int errorCode);
+
 contract NFTCreator is ExpiryHelper, HederaTokenService {
-    
     function createNft(
         string memory name,
         string memory symbol,
@@ -16,7 +15,6 @@ contract NFTCreator is ExpiryHelper, HederaTokenService {
         uint32 maxSupply,
         uint32 autoRenewPeriod
     ) external payable returns (address) {
-        
         IHederaTokenService.TokenKey[]
             memory keys = new IHederaTokenService.TokenKey[](1);
         // Set this contract as supply
@@ -41,7 +39,7 @@ contract NFTCreator is ExpiryHelper, HederaTokenService {
             .createNonFungibleToken(token);
 
         if (responseCode != HederaResponseCodes.SUCCESS) {
-            //  revert ("failure");
+            //revert("Failed to create non-fungible token");
         }
         return createdToken;
     }

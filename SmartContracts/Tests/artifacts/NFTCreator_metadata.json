@@ -8,17 +8,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "int256",
-						"name": "errorCode",
-						"type": "int256"
-					}
-				],
-				"name": "FailedToCreateNFT",
-				"type": "error"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "string",
 						"name": "name",
 						"type": "string"
@@ -122,7 +111,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"hbar/SmartContracts/Tests/MintAndTransfer2.sol": "NFTCreator"
+			"hbar/SmartContracts/Tests/MintAndTransfer3.sol": "NFTCreator"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -184,12 +173,12 @@
 				"dweb:/ipfs/QmabBXMqR3avxQ6nHeqFXmVhGpfNH5bZXP9zaBRDZ7WYtN"
 			]
 		},
-		"hbar/SmartContracts/Tests/MintAndTransfer2.sol": {
-			"keccak256": "0xb9ca8eb975f315141944067974fb8cc3dba212f9ed165a269f7e495d4458c273",
+		"hbar/SmartContracts/Tests/MintAndTransfer3.sol": {
+			"keccak256": "0xf6144b1b377c03ece561d2bc26a56065ea5c9984d8a67d30f0eac2504467ecf0",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://5303c10a49953eef061f88dfe461a442f1ec45f4c3747f510ea5fd0301aa88e8",
-				"dweb:/ipfs/QmeTxJ6wArGJhJgyqfSWnHa7gQNjrYenRpK3x9dKsdF92F"
+				"bzz-raw://1c2d32586ae3b11342260e512234471706bd810352ab73c42dfdd9811d23fd25",
+				"dweb:/ipfs/QmRwa6jYAmuB2XDZwUTRfLBr9MFHd9YbzL5eyntoe6cgEK"
 			]
 		}
 	},
