@@ -1,7 +1,10 @@
-with open ('data.json', 'w') as d:
-    name=input('name')
-    description=input('description')
-    image=input('image')
-    edition=input('edition')
-    d.write('{{"name":"{}","description":"{}","image":"{}","properties": { "edition":"{}"}}}'.format(name,description,image,edition))
-d.close()
+import pandas as pd
+df = pd.read_csv('metadata.csv')
+for i in range(0, 8):
+    for j in range(0, 5):
+        with open(f'metadata/{i}.{j}.json', 'w') as f:
+            id = i*5+j
+            name = df['imagename'][id]
+            cid = df['cid'][id]
+            f.write(
+                f"{{ \"name\":\"{i}.{j}\".\"image\":\"https://ipfs.io/ipfs/{cid}\"}}")
