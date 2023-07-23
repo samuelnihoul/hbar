@@ -33,9 +33,10 @@ async function mint() {
 		const v1 = v0.toV1().toString()
 		const name = myjson[i]['imagename'].toString() + '.json'
 		const link = 'ipfs://' + v1 + '/' + name
+		const l = 'https://ipfs.io/ipfs/' + v0
 		let mintTx = new TokenMintTransaction()
 			.setTokenId(tokenId)
-			.setMetadata([Buffer.from(link)])
+			.setMetadata([Buffer.from(cid)])
 			// .setMetadata(new ArrayBuffer(CID))
 			.freezeWith(client);
 		let mintTxSign = await mintTx.sign(supplyKey);
@@ -43,6 +44,7 @@ async function mint() {
 		let mintRx = await mintTxSubmit.getReceipt(client);
 		console.log(`- Created NFT ${tokenId} with serial: ${mintRx.serials[0].low} \n`);
 		console.log(link)
+		console.log(l)
 	}
 }
 export default mint
