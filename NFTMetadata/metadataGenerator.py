@@ -7,4 +7,4 @@ for i in range(0, 8):
             name = df['imagename'][id]
             cid = df['cid'][id]
             f.write(
-                f"{{ \"name\":\"{i}.{(j+1)%5}\".\"image\":\"https://ipfs.io/ipfs/{cid}\"}}")
+                f"{{ \"name\":\"{i}.{(j+1)%5}\".\"image\":\"https://ipfs.io/ipfs/{cid}?filename={name}.json\"}}")

@@ -1,2 +1,3 @@
 import mint from './nftToSelf.js'
-mint()
+import a from './ipfs.js'
+a() 
