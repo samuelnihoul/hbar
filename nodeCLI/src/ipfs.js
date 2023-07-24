@@ -1,13 +1,10 @@
 import 'fs'
-import * as IPFS from 'ipfs-core'
-export default async function main() {
-  const node = await IPFS.create()
-  for (let i = 0; i < 40; i++) {
-    console.log(IPFS.add(`../../NFTMetadata/${i / 8}.${i % 5}.json`))
-  }
+import * as ipfs from 'ipfs-core'
+async function upload1() {
+  const client = ipfs.create()
+  for (i)
 }
-async function b() {
-  const node = await IPFS.create()
+async function upload2() {
 
-}
-export { b }
+  const client = ipfs.create()
+} 
