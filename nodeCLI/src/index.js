@@ -1,3 +1,5 @@
-import mint from './nftToSelf.js'
-import a from './ipfs.js'
-a() 
+import * as fs from "fs";
+function a() {
+  gile = fs.rea;
+}
+a();
