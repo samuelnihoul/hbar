@@ -14,4 +14,20 @@ function a() {
     )
   }
 }
-a();
+import { createHelia } from 'helia'
+import { json } from '@helia/json'
+
+
+
+async function c() {
+  const helia = await createHelia()
+  const j = json(helia)
+  for (let i = 0; i < 40; i++) {
+    let d = fs.readdirSync('/home/nuhutuh25/hbar/nodeCLI/src/metadata/')
+    let myImmutableAddress = await j.add(fs.readFileSync(`/home/nuhutuh25/hbar/nodeCLI/src/metadata/${d[i]}`))
+    b[i]['metadata'] = myImmutableAddress["/"]
+  }
+  fs.writeFileSync('/home/nuhutuh25/hbar/nodeCLI/src/NFTs.json', JSON.stringify(b))
+
+}
+c();
