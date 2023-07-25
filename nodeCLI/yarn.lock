@@ -136,7 +136,7 @@
     uint8arraylist "^2.3.2"
     uint8arrays "^4.0.2"
 
-"@chainsafe/libp2p-noise@^12.0.0", "@chainsafe/libp2p-noise@^12.0.1":
+"@chainsafe/libp2p-noise@^12.0.0", "@chainsafe/libp2p-noise@^12.0.1", "@chainsafe/libp2p-noise@^12.0.2":
   version "12.0.2"
   resolved "https://registry.yarnpkg.com/@chainsafe/libp2p-noise/-/libp2p-noise-12.0.2.tgz#2e2729e543fc1da3d50ad63e33bfd355bfb2b691"
   integrity sha512-bKlasdYJBXsCgcOw+gNNnpvNo3jD8BiSRpKrhYxEmBPQzesme15PBrj5Cx369PZEk4SvKSHS6dzL4oLxXqPSLw==
@@ -1729,7 +1729,7 @@
     wherearewe "^2.0.1"
     ws "^8.12.1"
 
-"@libp2p/websockets@^6.0.1":
+"@libp2p/websockets@^6.0.1", "@libp2p/websockets@^6.0.3":
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/@libp2p/websockets/-/websockets-6.0.3.tgz#28ce191442f2fd454608647ca00600efe6e796d5"
   integrity sha512-pwOr3iAbczWmmCg1nHnC2Dl0Ek81Y6LE8ptImiUbuZ08q1E/fTumM8pRNmrrsogSshG4lugebArIO9SNMylJZg==
@@ -3224,7 +3224,7 @@ datastore-core@^8.0.1:
     it-take "^2.0.0"
     uint8arrays "^4.0.2"
 
-datastore-core@^9.0.0, datastore-core@^9.0.1:
+datastore-core@^9.0.0, datastore-core@^9.0.1, datastore-core@^9.2.0:
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/datastore-core/-/datastore-core-9.2.0.tgz#f88f357257279c8e3112147b138829d7e0573227"
   integrity sha512-r3HZCdRTPXbHsiakhbYCtdGix9/a0G7huwYa9Ive+pIN7BjkdcLQseQ+iCMsECcocwHu23rs2qzdHKSflbVSng==
@@ -5810,7 +5810,7 @@ libp2p@^0.42.0:
     wherearewe "^2.0.0"
     xsalsa20 "^1.1.0"
 
-libp2p@^0.45.2:
+libp2p@^0.45.2, libp2p@^0.45.9:
   version "0.45.9"
   resolved "https://registry.yarnpkg.com/libp2p/-/libp2p-0.45.9.tgz#cabc2ec8c90ff7fbf07fc0bef2380ff72a2a65c3"
   integrity sha512-cf2dCf8naZqQoDw3xxSEZ6rKgQ8BBne5iWgtIKHAYrCvL+ulshz72jNgeAG0FQ/jjRD3yzmUuwoMaLHj6gf7Bw==
