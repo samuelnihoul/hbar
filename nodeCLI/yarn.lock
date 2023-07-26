@@ -1578,7 +1578,7 @@
     "@multiformats/multiaddr" "^12.0.0"
     stream-to-it "^0.2.2"
 
-"@libp2p/tcp@^7.0.1":
+"@libp2p/tcp@^7.0.1", "@libp2p/tcp@^7.0.3":
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/@libp2p/tcp/-/tcp-7.0.3.tgz#b657b0738f4703add5b75ca180af5f1c5e01d0c6"
   integrity sha512-w1g5/BYDNpZKXrJZd1PW8kUS0GxHwFO6oql3rIizh5WaxmWtMa21LtKWIoHJyC8Wp4vshEUPeZthAIKECqUafg==
