@@ -3,22 +3,11 @@
     "@hashgraph/sdk": "^2.17.0",
     "dotenv": "^16.0.1"
   },
-  "name": "hbar",
-  "version": "1.1.0",
+  "name": "nodeCLI",
+  "version": "1.2.0",
   "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/samuelnihoul/hbar.git"
-  },
   "author": "Samuel Nihoul",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/samuelnihoul/hbar/issues"
-  },
-  "homepage": "https://github.com/samuelnihoul/hbar#readme",
   "description": "my hbar scripts"
 }
