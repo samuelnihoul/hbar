@@ -25,7 +25,8 @@ async function mint() {
   let tokenId = nftCreateRx.tokenId;
   console.log(`- Created NFT with Token ID: ${tokenId} \n`);
   for (let i = 0; i < 40; i++) {
-    const link = `https://firebasestorage.googleapis.com/v0/b/hypnotic-trees-328016.appspot.com/o/Metadata%2F${Math.floor((i / 5) + 1)}.${i % 5}.json?alt=media&token=ecf56d52-6685-4fc2-b9b3-a9ee3cffef38`
+    // const link = `https://firebasestorage.googleapis.com/v0/b/hypnotic-trees-328016.appspot.com/o/Metadata%2F${Math.floor((i / 5) + 1)}.${i % 5}.json?alt=media`
+    const link = 'https://firebasestorage.googleapis.com/v0/b/hypnotic-trees-328016.appspot.com/o/0.0.json?alt=media'
     let mintTx = new TokenMintTransaction()
       .setTokenId(tokenId)
       .setMetadata([Buffer.from(link)])
@@ -42,9 +43,13 @@ async function metadata() {
     fs.writeFileSync(`/home/nuhutuh25/hbar/nodeCLI/src/metadata/${Math.floor(i / 5) + 1}.${i % 5}.json`, JSON.stringify(
       {
         "name": `${Math.floor(i / 5) + 1}.${i % 5}`,
-        "image": `https://firebasestorage.googleapis.com/v0/b/hypnotic-trees-328016.appspot.com/o/FullCollection%2F${Math.floor((i / 5)) + 1}.${i % 5}.png?alt=media&token=ecf56d52-6685-4fc2-b9b3-a9ee3cffef3`
+        "image": `https://firebasestorage.googleapis.com/v0/b/hypnotic-trees-328016.appspot.com/o/FullCollection%2F${Math.floor((i / 5)) + 1}.${i % 5}.png?alt=media`
       }
     ))
   }
 }
-await mint();
+await mint()
+console.log('hone')
+
+
+
