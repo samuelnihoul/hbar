@@ -9,6 +9,9 @@ const operatorKey = PrivateKey.fromString(process.env.T5P)
 const client = Client.forTestnet().setOperator(operatorId, operatorKey);
 import myjson from './NFTs.json' assert {type: 'json'}
 
+await dagger()
+console.log('a')
+
 async function mint() {
   let nftCreate = new TokenCreateTransaction()
     .setTokenName("Karbon Basar")
@@ -38,18 +41,31 @@ async function mint() {
     console.log(`- Created NFT ${tokenId} with serial: ${mintRx.serials[0].low} \n`);
   }
 }
+
 async function metadata() {
+
   for (let i = 0; i < 40; i++) {
-    fs.writeFileSync(`/home/nuhutuh25/hbar/nodeCLI/src/metadata/${Math.floor(i / 5) + 1}.${i % 5}.json`, JSON.stringify(
+    fs.writeFileSync(`/home/nuhutuh25/hbar/src/metadata/${Math.floor(i / 5) + 1}.${i % 5}.json`, JSON.stringify(
       {
         "name": `${Math.floor(i / 5) + 1}.${i % 5}`,
-        "image": `https://firebasestorage.googleapis.com/v0/b/hypnotic-trees-328016.appspot.com/o/FullCollection%2F${Math.floor((i / 5)) + 1}.${i % 5}.png?alt=media`
+        "image": `https://ipfs.io/ipfs/QmQZCMyqKQtKV4JE9pMJ1F9TngaG7C6cRkYh5kS9xRZLuD/FullCollection/${Math.floor(i / 5) + 1}.${i % 5}.png`
       }
     ))
   }
 }
-await mint()
-console.log('hone')
+import { dagCbor } from '@helia/dag-cbor'
+async function helia() {
+
+}
+import dag from './DAG.json' assert {type: 'json'}
+async function dagger() {
+  for (let i = 0; i < 40; i++) {
+    myjson[i]['name'] = myjson[i]['name'].slice(0, -4)
+    myjson[i]['metadata'] = `https://ipfs.io/ipfs/QmTcziDveVGf6NzosGZ17GSSEkbCEHiq3p1LUhfjzHd8Y2/metadata/${Math.floor(i / 5) + 1}.${i % 5}.json`
+  }
+  fs.writeFileSync('/home/nuhutuh25/hbar/src/NFTs.json', JSON.stringify(myjson))
+}
+
 
 
 
