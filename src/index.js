@@ -3,6 +3,7 @@ import * as fs from 'fs'
 import { AccountId, PrivateKey, Client, TokenMintTransaction, TokenCreateTransaction, TokenType, TokenSupplyType } from '@hashgraph/sdk'
 import myjson from './NFTs.json' assert {type: 'json'}
 
+const KMID = '0.0.1113578'
 const KBID = '0.0.3276256'
 const treasuryId = AccountId.fromString(process.env.S)
 const treasuryKey = PrivateKey.fromString(process.env.SP)
@@ -11,7 +12,7 @@ const operatorId = AccountId.fromString(process.env.S)
 const operatorKey = PrivateKey.fromString(process.env.SP)
 const client = Client.forMainnet().setOperator(operatorId, operatorKey).setMaxAttempts(1000);
 
-await mint()
+await mintKM()
 console.log('a')
 
 async function mint() {
@@ -75,6 +76,16 @@ async function dagger() {
     myjson[i]['metadata'] = `https://ipfs.io/ipfs/QmTcziDveVGf6NzosGZ17GSSEkbCEHiq3p1LUhfjzHd8Y2/metadata/${Math.floor(i / 5) + 1}.${i % 5}.json`
   }
   fs.writeFileSync('/home/nuhutuh25/hbar/src/NFTs.json', JSON.stringify(myjson))
+}
+async function mintKM() {
+  let mintTx = new TokenMintTransaction()
+    .setTokenId(KMID)
+    .freezeWith(client);
+  let mintTxSign = await mintTx.sign(supplyKey);
+  let mintTxSubmit = await mintTxSign.execute(client);
+  let mintRx = await mintTxSubmit.getReceipt(client);
+  console.log(mintRx)
+  console.log(`- Created NFT ${KMID}\n`);
 }
 
 
