@@ -17,32 +17,6 @@ console.log('a')
 
 async function mint() {
 
-  // let nftCreate = new TokenCreateTransaction()
-  //   .setTokenName("Karbon Basar")
-  //   .setTokenSymbol("KB")
-  //   .setTokenType(TokenType.NonFungibleUnique)
-  //   .setDecimals(0)
-  //   .setInitialSupply(0)
-  //   .setTreasuryAccountId(treasuryId)
-  //   .setSupplyKey(supplyKey)
-  //   .freezeWith(client)
-  // let nftCreateTxSign = await nftCreate.sign(treasuryKey);
-  // let nftCreateSubmit = await nftCreateTxSign.execute(client);
-  // let nftCreateRx = await nftCreateSubmit.getReceipt(client);
-  // let tokenId = nftCreateRx.tokenId;
-  // console.log(`- Created NFT with Token ID: ${tokenId} \n`);
-
-  // for (let i = 0; i < 40; i++) {
-  //   const link = myjson[i]['metadata']
-  //   let mintTx = new TokenMintTransaction()
-  //     .setTokenId(tokenId)
-  //     .setMetadata([Buffer.from(link)])
-  //     .freezeWith(client);
-  //   let mintTxSign = await mintTx.sign(supplyKey);
-  //   let mintTxSubmit = await mintTxSign.execute(client);
-  //   let mintRx = await mintTxSubmit.getReceipt(client);
-  //   console.log(`- Created NFT ${tokenId} with serial: ${mintRx.serials[0].low} \n`);
-  // }
   const link = 'https://ipfs.io/ipfs/QmXCP2eaVLPSuQVfnx6SL2zA2fAuiqRYcLNNJTVRm7B3Xr'
   let mintTx = new TokenMintTransaction()
     .setTokenId(KBID)
