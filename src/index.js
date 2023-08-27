@@ -79,13 +79,12 @@ async function dagger() {
 }
 async function mintKM() {
   let mintTx = new TokenMintTransaction()
-    .setTokenId(KMID)
-    .freezeWith(client);
+    .setTokenId(KMID).setAmount(999)
+    .freezeWith(client)
   let mintTxSign = await mintTx.sign(supplyKey);
   let mintTxSubmit = await mintTxSign.execute(client);
   let mintRx = await mintTxSubmit.getReceipt(client);
   console.log(mintRx)
-  console.log(`- Created NFT ${KMID}\n`);
 }
 
 
