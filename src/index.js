@@ -53,7 +53,7 @@ async function dagger() {
 }
 async function mintKM() {
   let mintTx = new TokenMintTransaction()
-    .setTokenId(KMID).setAmount(999)
+    .setTokenId(KMID).setAmount(1000)
     .freezeWith(client)
   let mintTxSign = await mintTx.sign(supplyKey);
   let mintTxSubmit = await mintTxSign.execute(client);
